@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   }
 mongoose
-.connect(db,{useNewUrlParser:true})
+.connect("mongodb+srv://admin:XOioGxdakeqY50xz@mern-jhfjz.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true})
 .then(()=>console.log("connected to moogoDB"))
 .catch((error)=>console.log(error))
 
