@@ -11,15 +11,15 @@ const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login')
 
 router.get("/test", (req,res) => {
-    // debugger
+    // 
     res.json({msg: "this is the user router"})
 })
 
 router.post('/register', (req, res) => {
-    // debugger
-    // Check to make sure nobody has already registered with a duplicate email
+    // 
+
     const { errors, isValid } = validateRegisterInput(req.body);
-    // debugger
+    
     if (!isValid) {
       return res.status(400).json(errors);
     }
@@ -29,7 +29,7 @@ router.post('/register', (req, res) => {
           // Throw a 400 error if the email address already exists
           return res.status(400).json({email: "A user has already registered with this address"})
         } else {
-            // debugger
+            // 
           // Otherwise create a new user
           const newUser = new User({
             handle: req.body.handle,
@@ -51,12 +51,12 @@ router.post('/register', (req, res) => {
   })
 
   router.post('/login', (req, res) => {
+    
     const { errors, isValid } = validateLoginInput(req.body);
-
     if (!isValid) {
     return res.status(400).json(errors);
     }
-
+    
     const email = req.body.email;
     const password = req.body.password;
   

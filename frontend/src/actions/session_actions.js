@@ -32,7 +32,9 @@ export const signup = user => dispatch => (
     ))
 );
 
-export const login = user => dispatch => (
+export const login = user => dispatch => {
+    
+return (
     APIUtil.login(user).then(res => {
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
@@ -44,6 +46,7 @@ export const login = user => dispatch => (
         dispatch(receiveErrors(err.response.data));
     })
 )
+}
 
 export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken')

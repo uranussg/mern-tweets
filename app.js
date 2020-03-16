@@ -22,7 +22,7 @@ require('./config/passport')(passport);
 
 
 app.get("/", (req,res) => {
-    // debugger
+    // 
     // console.log(res)
     res.send("Hello World")
 })

@@ -6,8 +6,7 @@ module.exports = function validateRegisterInput(data) {
     data.handle = validText(data.handle) ? data.handle : ""
     data.email = validText(data.email) ? data.email : ""
     data.password = validText(data.password) ? data.password : ""
-    data.passwords = validText(data.passwords) ? data.password2 : ""
-
+    data.password2 = validText(data.passwords) ? data.password2 : ""
     if (!Validator.isLength(data.handle, {min: 2, max: 30})) {
         errors.handle = "handle must be between 2 and 30 chars"
     }
@@ -21,7 +20,7 @@ module.exports = function validateRegisterInput(data) {
         errors.email = "email field is required"
     }
 
-    if (Validator.isEmail(data.email)) {
+    if (!Validator.isEmail(data.email)) {
 
         errors.email = "email is invalid"
     }
