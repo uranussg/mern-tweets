@@ -73,7 +73,7 @@ router.post('/register', (req, res) => {
 
                 jwt.sign(
                   payload,
-                  keys.secretOrKey,
+                  "secret",
                   // Tell the key to expire in one hour
                   {expiresIn: 3600},
                   (err, token) => {
