@@ -17,7 +17,7 @@ app.use(passport.initialize());
 app.use(bodyParser.urlencoded({
     extended:false
 }));
-app.user(bodyParser.json())
+app.use(bodyParser.json())
 require('./config/passport')(passport);
 
 

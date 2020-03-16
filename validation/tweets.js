@@ -4,14 +4,14 @@ const validText = require("./valid-text")
 module.exports = function(data) {
     let errors = {}
 
-    data.body = validText(data.body) ? data.body : ''
+    data.text = validText(data.text) ? data.text : ''
 
-    if (Validator.isEmpty(data.body)) {
-        error.body = 'Tweets can not be empty'
+    if (Validator.isEmpty(data.text)) {
+        errors.text = 'Tweets can not be empty'
     }
 
-    if (Validator.isLength(data.body, {max: 100})) {
-        error.body = 'Tweets can not exceed 100 words'
+    if (!Validator.isLength(data.text, {max: 100})) {
+        errors.text = 'Tweets can not exceed 100 words'
     }
 
     return {

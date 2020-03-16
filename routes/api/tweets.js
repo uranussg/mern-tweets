@@ -39,7 +39,7 @@ router.post('/',
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
+        debugger
       const newTweet = new Tweet({
         text: req.body.text,
         user: req.user.id

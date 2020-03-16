@@ -7,12 +7,12 @@ const Tweetschema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    body: {
+    text: {
         type: String,
         required: true
     },
     date: {
-        type: date,
+        type: Date,
         default: Date.now
     }
 

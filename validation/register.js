@@ -17,10 +17,12 @@ module.exports = function validateRegisterInput(data) {
     }
 
     if (Validator.isEmpty(data.email)) {
+
         errors.email = "email field is required"
     }
 
     if (Validator.isEmail(data.email)) {
+
         errors.email = "email is invalid"
     }
 
